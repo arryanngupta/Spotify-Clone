@@ -24,7 +24,7 @@ let songLI;
 async function getSongs(folder) {
     currentFolder = folder;
 
-    let a = await fetch(`http://127.0.0.1:3000/Spotify%20Clone/assests/songs/${currentFolder}/`);
+    let a = await fetch(`http://127.0.0.1:3000/Spotify Clone/assests/songs/${currentFolder}/`);
     let response = await a.text();
     let div = document.createElement("div");
     div.innerHTML = response;
@@ -81,7 +81,7 @@ function PlayMusic(track) {
 }
 
 async function displayAlbum(){
-    let a = await fetch("http://127.0.0.1:3000/Spotify%20Clone/assests/songs/");
+    let a = await fetch("http://127.0.0.1:3000/Spotify Clone/assests/songs/");
     let response = await a.text();
     //console.log(response);
     let div = document.createElement("div");
@@ -90,12 +90,12 @@ async function displayAlbum(){
     let array = Array.from(anchors);
     for(let i = 0;i<array.length;i++){
         const e = array[i];
-        if(e.href.includes("/songs")){
+        if(e.href.includes("/songs") && !e.href.includes(".htaccess")){
             //console.log(e.href.split("/songs/")[1].slice(0,-1));
             
             let folder = e.href.split("/songs/")[1].slice(0,-1);
             // Get the metadata of the folder;
-            let a = await fetch(`http://127.0.0.1:3000/Spotify%20Clone/assests/songs/${folder}/info.json`);
+            let a = await fetch(`http://127.0.0.1:3000/Spotify Clone/assests/songs/${folder}/info.json`);
             let response = await a.json();
             //console.log(response);
             document.querySelector(".card-container").innerHTML = document.querySelector(".card-container").innerHTML + `<div data-folder=${folder} class="card">

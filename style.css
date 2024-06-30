@@ -14,8 +14,7 @@ body {
     display: flex;
 }
 
-.left-section {
-    
+.left-section {    
     width: 25vw;
     padding-left: 5px;
     padding-top: 4px;
@@ -477,7 +476,7 @@ footer button:hover{
     justify-content: space-between;
     color: white;
     padding: 2px 7px 5px 7px;
-    margin: 5px 5px 0px 5px;
+    margin: 25px 5px 0px 5px;
     max-height: 30px;
     width: 96vw;
     border-radius: 4px;
